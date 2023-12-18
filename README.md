@@ -37,7 +37,6 @@ http://localhost:5000/api/user/{id}
 ###### Data Needed
 ```JSON
 {
- id: --auto-generated--,
  title: "Movie Title",
  director: "Director",
  year: "Year",
@@ -53,7 +52,6 @@ http://localhost:5000/api/movies
 ###### Data Needed
 ```JSON
 {
- id: --auto-generated--,
  firstname: "First Name",
  lastname: "Last Name",
  email: "someone@example.com",
@@ -64,3 +62,42 @@ http://localhost:5000/api/movies
 ```
 http://localhost:5000/api/users
 ```
+
+### PUT ROUTES - ONLY WORKS WITH POSTMAN!
+
+#### Update Movie
+
+###### Data Needed
+
+```json
+{
+ title: "Update Movie Title",
+ director: "Update Director",
+ year: "Update Year",
+ color: "Update 1", // 1 for color movie, 0 for black/white movie
+ duration: 180
+}
+```
+
+```
+http://localhost:5000/api/movies/{id}
+```
+
+#### Update User
+
+###### Data Needed
+
+```json
+{
+ firstname: "First Name",
+ lastname: "Last Name",
+ email: "someone@example.com",
+ city: "Madrid",
+ language: "Valyrian"
+}
+```
+
+```json
+http://localhost:5000/api/users/{id}
+```
+
