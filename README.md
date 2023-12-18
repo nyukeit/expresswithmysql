@@ -9,6 +9,8 @@ This project is using a test MySQL DB to return results of Movies / Users (based
 4. Use the data from ENV Sample file and use your DB Credentials to connect
 5. npm run dev
 
+### GET ROUTES
+
 #### Query Movies
 ```
 http://localhost:5000/api/movies
@@ -27,4 +29,38 @@ http://localhost:5000/api/users
 #### Query Users by ID
 ```
 http://localhost:5000/api/user/{id}
+```
+
+### POST ROUTES - ONLY WORKS WITH POSTMAN!
+#### Add Movie
+
+###### Data Needed
+```JSON
+{
+ id: --auto-generated--,
+ title: "Movie Title",
+ director: "Director",
+ year: "Year",
+ color: "1", // 1 for color movie, 0 for black/white movie
+ duration: 180
+}
+```
+```
+http://localhost:5000/api/movies
+```
+
+#### Add User
+###### Data Needed
+```JSON
+{
+ id: --auto-generated--,
+ firstname: "First Name",
+ lastname: "Last Name",
+ email: "someone@example.com",
+ city: "Madrid",
+ language: "Valyrian"
+}
+```
+```
+http://localhost:5000/api/users
 ```
