@@ -63,7 +63,7 @@ http://localhost:5000/api/movies
 http://localhost:5000/api/users
 ```
 
-### PUT Routes (Postman Only!)
+### PUT Routes (Postman Only)
 
 #### Update Movie
 
@@ -110,5 +110,17 @@ Validating User Input (through sending data via postman, no HTML forms yet) befo
 | Wrongly inputted email ID    | Error output                  |
 | ![](./images/errorinput.png) | ![](./images/erroroutput.png) |
 
+### Delete Routes (Postman Only)
 
+#### Delete Movie
+
+```
+http://localhost:5000/api/movies/{id}
+```
+
+#### Delete User
+
+```
+http://localhost:5000/api/users/{id}
+```
 

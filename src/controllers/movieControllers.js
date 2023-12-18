@@ -56,9 +56,24 @@ const updateMovie = (req, res) => {
   )  
 }
 
+const deleteMovie = (req, res) => {
+  const id = parseInt(req.params.id);
+  db.query(
+    'DELETE FROM `movies` WHERE `id` = ?', [id],
+    (err, results) => {
+      if (err) {
+        res.status(422).send(err);
+      } else {
+        res.status(200);
+      }
+    }
+  )
+}
+
 module.exports = {
   getMovies,
   getMovieById,
   addMovie,
   updateMovie,
+  deleteMovie,
 };
