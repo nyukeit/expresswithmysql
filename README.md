@@ -31,7 +31,7 @@ http://localhost:5000/api/users
 http://localhost:5000/api/user/{id}
 ```
 
-### POST ROUTES - ONLY WORKS WITH POSTMAN!
+### POST Routes (Postman Only)
 #### Add Movie
 
 ###### Data Needed
@@ -63,7 +63,7 @@ http://localhost:5000/api/movies
 http://localhost:5000/api/users
 ```
 
-### PUT ROUTES - ONLY WORKS WITH POSTMAN!
+### PUT Routes (Postman Only!)
 
 #### Update Movie
 
@@ -100,4 +100,15 @@ http://localhost:5000/api/movies/{id}
 ```json
 http://localhost:5000/api/users/{id}
 ```
+
+### Validations (Postman Only)
+
+Validating User Input (through sending data via postman, no HTML forms yet) before adding data to the DB. The validations are being checked by `express-validtor`
+
+| Error Input                  | Error Output                  |
+| ---------------------------- | ----------------------------- |
+| Wrongly inputted email ID    | Error output                  |
+| ![](./images/errorinput.png) | ![](./images/erroroutput.png) |
+
+
 
