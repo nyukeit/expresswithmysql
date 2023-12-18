@@ -32,17 +32,33 @@ const addMovie = (req, res) => {
     [title, director, year, color, duration],
     (err, results) => {
       if (err) {
-        res.status(500).send(err);
+        res.status(422).send(err);
       } else {
         res.status(201).send({id: results.insertId});
       }
     }
   )
-  // res.send("addMovie");
+}
+
+const updateMovie = (req, res) => {
+  const id = parseInt(req.params.id);
+  const {title, director, year, color, duration} = req.body;
+  db.query(
+    'UPDATE `movies` SET `title` = ?, `director` = ?, `year` = ?, `color` = ?, `duration` = ? WHERE `id` = ?', 
+    [title, director, year, color, duration, id],
+    (err, results) => {
+      if (err) {
+        res.status(422).send(err);
+      } else {
+        res.status(200);
+      }
+    }
+  )  
 }
 
 module.exports = {
   getMovies,
   getMovieById,
   addMovie,
+  updateMovie,
 };

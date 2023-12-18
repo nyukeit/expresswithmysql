@@ -31,13 +31,12 @@ http://localhost:5000/api/users
 http://localhost:5000/api/user/{id}
 ```
 
-### POST ROUTES - ONLY WORKS WITH POSTMAN!
+### POST Routes (Postman Only)
 #### Add Movie
 
 ###### Data Needed
 ```JSON
 {
- id: --auto-generated--,
  title: "Movie Title",
  director: "Director",
  year: "Year",
@@ -53,7 +52,6 @@ http://localhost:5000/api/movies
 ###### Data Needed
 ```JSON
 {
- id: --auto-generated--,
  firstname: "First Name",
  lastname: "Last Name",
  email: "someone@example.com",
@@ -64,3 +62,53 @@ http://localhost:5000/api/movies
 ```
 http://localhost:5000/api/users
 ```
+
+### PUT Routes (Postman Only!)
+
+#### Update Movie
+
+###### Data Needed
+
+```json
+{
+ title: "Update Movie Title",
+ director: "Update Director",
+ year: "Update Year",
+ color: "Update 1", // 1 for color movie, 0 for black/white movie
+ duration: 180
+}
+```
+
+```
+http://localhost:5000/api/movies/{id}
+```
+
+#### Update User
+
+###### Data Needed
+
+```json
+{
+ firstname: "First Name",
+ lastname: "Last Name",
+ email: "someone@example.com",
+ city: "Madrid",
+ language: "Valyrian"
+}
+```
+
+```json
+http://localhost:5000/api/users/{id}
+```
+
+### Validations (Postman Only)
+
+Validating User Input (through sending data via postman, no HTML forms yet) before adding data to the DB. The validations are being checked by `express-validtor`
+
+| Error Input                  | Error Output                  |
+| ---------------------------- | ----------------------------- |
+| Wrongly inputted email ID    | Error output                  |
+| ![](./images/errorinput.png) | ![](./images/erroroutput.png) |
+
+
+
