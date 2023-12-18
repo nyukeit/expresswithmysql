@@ -41,8 +41,25 @@ const addUser = (req, res) => {
   )
 }
 
+const updateUser = (req, res) => {
+  const id = parseInt(req.params.id);
+  const {firstname, lastname, email, city, language} = req.body;
+  db.query(
+    'UPDATE `users` SET `firstname` = ?, `lastname` = ?, `email` = ?, `city` = ?, `language` = ? WHERE `id` = ?', 
+    [firstname, lastname, email, city, language, id],
+    (err, results) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200);
+      }
+    }
+  )
+}
+
 module.exports = {
   getUsers,
   getUserById,
   addUser,
+  updateUser,
 };
