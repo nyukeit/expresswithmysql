@@ -10,12 +10,4 @@ const db = mysql.createConnection({
   port: process.env.DB_PORT,
 });
 
-// simple query
-db.query(
-  'SELECT * FROM `movies`',
-  function(err, results, fields) {
-    console.log(results); // results contains rows returned by server
-  }
-);
-
 module.exports = db;
