@@ -32,7 +32,7 @@ const addMovie = (req, res) => {
     [title, director, year, color, duration],
     (err, results) => {
       if (err) {
-        res.status(500).send(err);
+        res.status(422).send(err);
       } else {
         res.status(201).send({id: results.insertId});
       }
@@ -48,7 +48,7 @@ const updateMovie = (req, res) => {
     [title, director, year, color, duration, id],
     (err, results) => {
       if (err) {
-        res.status(500).send(err);
+        res.status(422).send(err);
       } else {
         res.status(200);
       }

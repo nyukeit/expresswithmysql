@@ -33,7 +33,7 @@ const addUser = (req, res) => {
     [firstname, lastname, email, city, language],
     (err, results) => {
       if (err) {
-        res.status(500).send(err);
+        res.status(422).send(err);
       } else {
         res.status(201).send({id: results.insertId});
       }
@@ -49,7 +49,7 @@ const updateUser = (req, res) => {
     [firstname, lastname, email, city, language, id],
     (err, results) => {
       if (err) {
-        res.status(500).send(err);
+        res.status(422).send(err);
       } else {
         res.status(200);
       }
