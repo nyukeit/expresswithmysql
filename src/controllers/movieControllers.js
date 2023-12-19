@@ -1,10 +1,23 @@
 const db = require("../../db");
 
 const getMovies = (req, res) => {
-  // simple query
+  let sql = 'SELECT * FROM `movies`';
+  let sqlValues = [];
+  if (req.query.color != null) {
+    sql += " where color = ?";
+    sqlValues.push(req.query.color);  
+    if (req.query.max_duration != null) { 
+      sql += " and duration <= ?"; 
+      sqlValues.push(req.query.max_duration);  
+    } 
+  } else if (req.query.max_duration != null) { 
+    sql += " where duration <= ?"; 
+    sqlValues.push(req.query.max_duration); 
+  }
   db.query(
-    'SELECT * FROM `movies`',
+    sql, sqlValues,
     (err, results) => {
+      console.log(results);
       res.json(results); // results contains rows returned by server
     }
   );
