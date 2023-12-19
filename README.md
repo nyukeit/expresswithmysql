@@ -124,3 +124,29 @@ http://localhost:5000/api/movies/{id}
 http://localhost:5000/api/users/{id}
 ```
 
+### Query Parameters
+
+#### Movie Queries
+
+`color` and `duration`
+
+```
+http://localhost:5000/api/movies?color={} // Pass 0 or 1
+```
+
+```
+http://localhost:5000/api/movies?duration={} // Duration in minutes
+```
+
+#### User Queries
+
+`language` and `city`
+
+```
+http://localhost:5000/api/movies?city={} // Example Paris
+```
+
+```
+http://localhost:5000/api/movies?language={} // Example English
+```
+
